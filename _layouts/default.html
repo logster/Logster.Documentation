@@ -1,66 +1,87 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
 
-    <link rel="stylesheet" href="{{site.baseurl}}/css/styles.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/css/github-light.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/combined.css">
     <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
-
 <body>
-    <div class="wrapper">
-        <header>
-            <h1><a href="{{site.baseurl}}/">{{ site.name }}</a></h1>
-            <p>{{ site.description }}</p>
 
-            <p class="view"><a href="http://logster.io">logster.io</a></p>
-
-            <!--<ul>
-                <li><a href="https://github.com/logster/Logster.Documentation/zipball/master">Download <strong>ZIP File</strong></a></li>
-                <li><a href="https://github.com/logster/Logster.Documentation/tarball/master">Download <strong>TAR Ball</strong></a></li>
-                <li><a href="https://github.com/logster/Logster.Documentation">View On <strong>GitHub</strong></a></li>
-            </ul>-->
-        </header>
-
-        <!--<nav>
-            <h3>First Heading</h3>
-
-            <ul>
-                <li><i class="icon-home"></i> <a href="{{site.baseurl}}/">Home</a></li>
-                <li><i class="icon-mail"></i> <a href="{{site.baseurl}}/contact">Contact</a></li>
-                <li><i class="icon-th"></i> <a href="{{site.baseurl}}/archive">Archive</a></li>
-                <li><i class="icon-rss"></i> <a href="{{site.baseurl}}/feed.xml">RSS Feed</a></li>
-            </ul>
-
-            <h3>Second Heading</h3>
-
-            <ul>
-                <li><i class="icon-link"></i> <a href="#">Link 1</a></li>
-                <li><i class="icon-link"></i> <a href="#">Link 2</a></li>
-                <li><i class="icon-link"></i> <a href="#">Link 3</a></li>
-            </ul>
-        </nav>-->
-
-        <section>
-
-            {{ content }}
-
-        </section>
-
-        <footer>
-            <p>This project is maintained by <a href="https://github.com/logster">{{ site.author }}</a></p>
-            <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-        </footer>
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+                <a class="blog-nav-item active" href="{{site.baseurl}}/">Docs</a>
+                <a class="blog-nav-item" href="https://github.com/logster/Logster.Samples">Samples</a>
+                <a class="blog-nav-item" href="http://logster.io">logster.io</a>
+            </nav>
+        </div>
     </div>
-    <script src="{{site.baseurl}}/scripts/scale.fix.js"></script>
+
+    <div class="container-fluid">
+        <div class="blog-header">
+            <h1 class="blog-title"><a href="{{site.baseurl}}/">{{ site.name }}</a></h1>
+            <p class="lead blog-description">{{ site.description }}</p>
+        </div>
+
+        <div class="row">
+            <div id="toc-sidebar" class="col-sm-2 blog-sidebar hidden">
+                <div class="sidebar-module">
+                    <h4>Table of Contents</h4>
+                    <div id="toc"></div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-sm-offset-2 blog-main">
+                {{ content }}
+            </div>
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4>About</h4>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum.
+                        Aenean lacinia bibendum nulla sed consectetur.</p>
+                </div>
+                <div class="sidebar-module">
+                    <h4>DOCS</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="{{site.baseurl}}/getting-started">Getting Started</a></li>
+                    </ol>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Elsewhere</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /.blog-sidebar -->
+        </div>
+    </div>
+
+    <footer class="blog-footer">
+        <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="{{site.baseurl}}/scripts/vendor.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <script src="{{site.baseurl}}/scripts/site.js"></script>
+    <!-- theme based on http://getbootstrap.com/examples/blog/ -->
 </body>
 
 </html>

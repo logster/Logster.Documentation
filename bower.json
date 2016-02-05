@@ -1,0 +1,24 @@
+{
+  "name": "Logster.Documentation",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "John Rummell <john@elitebusinesssolutions.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/logster/Logster.Documentation",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "fontawesome#^4.5.0",
+    "toc": "^0.3.2"
+  }
+}

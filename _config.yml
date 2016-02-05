@@ -1,8 +1,8 @@
 # Name of your blog (this will show up at the top of your page and in the RSS feed)
-name: Logster.io Docs
+name: logster.io Docs
 
 # Short description (goes below the title; it will also be used in the RSS feed)
-description: Documentation for Logster.io
+description: Documentation for logster.io
 
 # Your name, as you want it to appear underneath each post and in the footer
 author: logster.io
@@ -37,4 +37,4 @@ permalink: pretty
 paginate: 3
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, bower_components, gulpfile.js, .gitattributes, .gitignore, bower.json, .markdownlint.json]
