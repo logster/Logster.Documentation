@@ -13,7 +13,7 @@ Add the following to your app.config or web.config:
     
     <logster apiKey="your-api-key" application="Logster.Samples.Web" />
 
-You can find your api key by viewing [your subscription](/Manage/Plan).
+You can find your api key by viewing [your subscription](https://portal.logster.io/Manage/Plan).
 
 ### log4net
 
@@ -172,8 +172,6 @@ See the [web api sample](https://github.com/logster/Logster.Samples/tree/master/
         var log = new LogsterWebLog();
         log.LogInBackground(message);
     }
-
-## Documentation
 
 ### Samples
 
