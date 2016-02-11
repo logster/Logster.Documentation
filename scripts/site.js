@@ -2,7 +2,8 @@ $(function () {
     hljs.initHighlighting();
 
     var $tocContent = $(".toc-content");
-    if ($tocContent.length > 0) {
+    var $headings = $("h2,h3", $tocContent);
+    if ($tocContent.length > 0 && $headings.length > 0) {
         var tocConfig = { container: ".toc-content", selectors: "h2,h3" };
         // set heading ids
         // $(tocConfig.selectors, $tocContent).each(function(){

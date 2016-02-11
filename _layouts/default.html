@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
     <link rel="stylesheet" href="{{site.baseurl}}/css/combined.css">
     <meta name="viewport" content="width=device-width">
@@ -13,47 +15,70 @@
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
+
 <body>
 
-    <div class="blog-masthead">
+    <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <nav class="blog-nav">
-                <a class="blog-nav-item active" href="{{site.baseurl}}/">Docs</a>
-                <a class="blog-nav-item" href="https://github.com/logster/Logster.Samples">Samples</a>
-                <a class="blog-nav-item" href="http://logster.io">logster.io</a>
-            </nav>
+            <div class="navbar-header">
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://logster.io">logster.io</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li><a class="blog-nav-item active" href="{{site.baseurl}}/"><i class="fa fa-file-text-o"></i> Docs</a></li>
+                    <li><a class="blog-nav-item" href="https://github.com/logster/Logster.Samples"><i class="fa fa-github"></i> Samples</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <div class="container-fluid">
+    <!--<div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+                <a class="blog-nav-item" href="http://logster.io"><img src="{{site.baseurl}}/images/brand-icon.png"> logster.io</a>
+                <a class="blog-nav-item active" href="{{site.baseurl}}/"><i class="fa fa-file-text-o"></i> Docs</a>
+                <a class="blog-nav-item" href="https://github.com/logster/Logster.Samples"><i class="fa fa-github"></i> Samples</a>
+            </nav>
+        </div>
+    </div>-->
+
+    <div class="container">
         <div class="blog-header">
             <h1 class="blog-title"><a href="{{site.baseurl}}/">{{ site.name }}</a></h1>
             <p class="lead blog-description">{{ site.description }}</p>
         </div>
 
         <div class="row">
-            <div id="toc-sidebar" class="col-sm-2 blog-sidebar hidden">
+            <div class="col-sm-3 blog-sidebar">
                 <div class="sidebar-module">
+                    <h4>DOCS</h4>
+                    <div class="list-group">
+                        {% for post in site.posts %}
+                        <a href="{{site.baseurl}}{{post.url}}" class="list-group-item {% if post.url == page.url %}active{% endif %}">{{ post.title }}</a>                        {% endfor %}
+                    </div>
+                </div>
+                <div id="toc-sidebar" class="sidebar-module hidden">
                     <h4>Table of Contents</h4>
                     <div id="toc"></div>
                 </div>
             </div>
-            
-            <div class="col-sm-6 col-sm-offset-2 blog-main">
+
+            <div class="col-sm-9 blog-main">
                 {{ content }}
             </div>
 
-            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+            <!--<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
                 <div class="sidebar-module sidebar-module-inset">
                     <h4>About</h4>
                     <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum.
                         Aenean lacinia bibendum nulla sed consectetur.</p>
-                </div>
-                <div class="sidebar-module">
-                    <h4>DOCS</h4>
-                    <ol class="list-unstyled">
-                        <li><a href="{{site.baseurl}}/getting-started">Getting Started</a></li>
-                    </ol>
                 </div>
                 <div class="sidebar-module">
                     <h4>Elsewhere</h4>
@@ -63,7 +88,7 @@
                         <li><a href="#">Facebook</a></li>
                     </ol>
                 </div>
-            </div>
+            </div>-->
             <!-- /.blog-sidebar -->
         </div>
     </div>
@@ -77,9 +102,9 @@
 
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="{{site.baseurl}}/scripts/vendor.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <script src="{{site.baseurl}}/scripts/vendor.js"></script>
     <script src="{{site.baseurl}}/scripts/site.js"></script>
     <!-- theme based on http://getbootstrap.com/examples/blog/ -->
 </body>
