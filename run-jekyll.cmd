@@ -1,0 +1,1 @@
+c:\tools\ruby22\bin\jekyll serve --watch
